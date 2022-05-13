@@ -5,7 +5,7 @@ static void toggle_led(void)
 {
     //int B=0;
     int n=0;
-	volatile long i;
+	volatile long m;
 	int delay = 0xFFFFFFF;
 	int delay_orange = 0x5FFFFFF;
 	int delay_blue = 0x25FFFFF;
@@ -20,42 +20,42 @@ if(1==1)
  for(n=0;n<5;n++)
  {
 	GPIOD->ODR = GPIOD->ODR | (1 << 12);
-	for (i = delay; i--; );
+	for (m = delay; m--; );
 
 	GPIOD->ODR = GPIOD->ODR & ~(1 << 12);
-	for (i = delay; i--; );
+	for (m = delay; m--; );
  }
  for(n=0;n<5;n++)
  {
 	GPIOD->ODR = GPIOD->ODR | (1 << 14);
-	for (i = delay; i--; );
+	for (m = delay; m--; );
 
 	GPIOD->ODR = GPIOD->ODR & ~(1 << 14);
-	for (i = delay; i--; );
+	for (m = delay; m--; );
 }
 for(n=0;n<5;n++)
 {
 	GPIOD->ODR = GPIOD->ODR | (1 << 13);
-	for (i = delay_orange; i--; );
+	for (m = delay_orange; m--; );
 
 
 	GPIOD->ODR = GPIOD->ODR & ~(1 << 13);
-	for (i = delay_orange; i--; );
+	for (m = delay_orange; m--; );
 }
 for(n=0;n<5;n++)
 {
 	GPIOD->ODR = GPIOD->ODR | (1 << 15);
-	for (i = delay_blue; i--; );
+	for (m = delay_blue; m--; );
 
 	GPIOD->ODR = GPIOD->ODR & ~(1 << 15);
-	for (i = delay_blue; i--; );
+	for (m = delay_blue; m--; );
 }
 }
 //#else
 //	GPIOD->BSRR = (1 << 28);
-//	for (i = 0xFFFFFFF; i--; );
+//	for (m = 0xFFFFFFF; m--; );
 //	GPIOD->BSRR = (1 << 12);
-//	for (i = 0xFFFFFFF; i--; );
+//	for (m = 0xFFFFFFF; m--; );
 //#endif
 
 }
